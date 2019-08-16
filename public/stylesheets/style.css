@@ -13,14 +13,32 @@ th {
 }
 
 td {
-  font-size: 20px;
+  font-size: 17px;
   padding: 5px;
+  color: white;
 }
 
-h1, h2, h5, div, label, td, a {
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+input, select {
+  background: linear-gradient(to left, white, #00B7FF);
+}
+
+nav a, a, .button{
+  font-size: 14px;
+  border: 2px solid white;
+  background: linear-gradient(to right, white, #00B7FF);
+  border-radius: 10px;
+  color: #4A6A9B;
+  padding: 5px;
+  margin: 0 20px;
+}
+
+h1, h2, h5, div, label, th {
   color: #00B7FF;
-}
-
-selection, input {
-  background: #00B7FF;
 }

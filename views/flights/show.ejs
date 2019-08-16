@@ -1,44 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title>Flight Details</title>
-</head>
-<body>
-<h2>Flight Details</h2>
+<%- include('../partials/header') %>
+
 <section id="show-page">
-  <div>Airline </div>
-  <div><%= flight.airline %></div>
-  <div>Flight Number </div>
-  <div><%= flight.flightNo %></div>
-  <div>Departs </div>
-  <div><%= flight.departs %></div>
-  <div>Airport </div>
-  <div><%= flight.airport %></div>
+  <div>Airline: <%= flight.airline %></div>
+  <div>Flight No: <%= flight.flightNo %></div>
+  <div>Departs: <%= flight.departs %></div>
+  <div>Airport: <%= flight.airport %></div>
 </section>
+
 <br><br><h2>Destination</h2>
-<form id="add-destination-form" method="POST" action="/flights/<%= flight._id %>/destinations">
-  <label>Arrival Date</label>
-    <input type="datetime-local" name="arrival">
-  <label>Arrival Airport</label>
+<form id="add-destination-form" method="POST" 
+  action="/flights/<%= flight._id %>/destinations">
+  <label>Airport:</label>
   <select name="airport">
+    <option value="SEA">Select an Airport</option>
     <option value="SEA">SEA</option>
     <option value="AUS">AUS</option>
     <option value="DAL">DAL</option>
     <option value="LAX">LAX</option>
   </select>
-  <input type="submit" value="Add Destination">
+  <br>
+  <label>Arrival Date</label>
+    <input type="datetime-local" name="arrival">
+  <br>
+  <input class="button" type="submit" value="Add Destination">
 </form>
 
 <% if (flight.destinations.length) { %>
-  <table>
+  <table class="destinations-table">
     <thead>
       <tr>
-        <th>Destination Airport</th>
-        <th>Destination Date</th>
+        <th>Airport</th>
+        <th>Arrival</th>
       </tr>
     </thead>
     <tbody>
@@ -53,5 +45,5 @@
   <% } else { %>
     <h5>No Destinations Yet</h5>
   <% } %>
-</body>
-</html>
+
+<%- include('../partials/footer') %>
