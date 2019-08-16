@@ -17,7 +17,7 @@ td {
   padding: 5px;
 }
 
-h1, label, td, a {
+h1, h2, h5, div, label, td, a {
   color: #00B7FF;
 }
 

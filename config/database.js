@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost:27017/flights',
-  {useNewUrlParser: true}
+  {useNewUrlParser: true, useCreateIndex: true}
 );
 
 var db = mongoose.connection;

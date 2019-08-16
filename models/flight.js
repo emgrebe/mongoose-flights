@@ -6,7 +6,9 @@ var destinationSchema = new Schema({
     type: String,
     enum: ['AUS', 'DAL', 'LAX', 'SEA']
   },
-  arrival: Date
+  arrival: {
+    type: Date
+  }
 });
 
 var flightSchema = new Schema({
@@ -15,26 +17,28 @@ var flightSchema = new Schema({
     enum: ['American', 'Southwest', 'United'],
     required: true
   },
-  fligthNo: {
-    type: Number,
+  flightNo: {
+    type: Number, 
     min: 10,
     max: 9999,
     required: true
   },
   departs: {
-    type: Date,
-    default: function() {
-      let date = new Date();
-      date.setFullYear(date.getFullYear() + 1)
-      return date.toLocaleDateString();
+    type: Date, 
+    default: function () {
+      var redate = new Date();
+      redate.setFullYear(redate.getFullYear()+1)
+      return redate
     }
   },
   airport: {
-    type: String,
+    type: String, 
     enum: ['AUS', 'DAL', 'LAX', 'SEA'],
     default: 'SEA'
   },
-  destinations: [destinationSchema],
+  destinations: [destinationSchema]
+}, {
+  timestamps: true
 });
 
 module.exports = mongoose.model('Flight', flightSchema);
