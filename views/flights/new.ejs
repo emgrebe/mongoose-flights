@@ -9,16 +9,16 @@
       </select>
     <label>Flight No.</label>
       <input type="number" name="flightNo">
-    <label>Departure Date</label>
-      <input class="localTime" type="datetime-local" name="departs">
+      <label>Airport</label>
       <select name="airport">
-        <option value="SEA">Selected an Airport</option>
         <option value="AUS">AUS</option>
         <option value="DAL">DAL</option>
         <option value="LAX">LAX</option>
         <option value="SEA">SEA</option>
       </select>
-    <input type="submit" value="Add Flight">
+      <label>Departure Date/Time</label>
+        <input class="localTime" type="datetime-local" name="departs">
+    <input  id="add" type="submit" value="Add Flight">
   </form>
 
 <%- include('../partials/footer') %>
