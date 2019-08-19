@@ -37,14 +37,14 @@ body > main h1:first-child {
   margin-bottom: 50px;
 }
 
-nav > a {
+#welcome, nav > a {
   text-decoration: none;
   margin: 20px;
   padding: 10px;
   border-radius: 5px;
 }
 
-nav > a:hover, nav > a.active, #detail, #addFlight, #addTicket {
+#welcome, nav > a:hover, nav > a.active, #detail, #addFlight, #addTicket {
   color: white;
   text-decoration: none;
   background: linear-gradient(to left, black, #00B7FF);
@@ -68,6 +68,7 @@ nav > a:hover, nav > a.active, #detail, #addFlight, #addTicket {
   width: 10rem;
   margin-left: auto;
 }
+
 h1, p {
   text-align: center;
 }
@@ -77,11 +78,11 @@ label {
   text-align: end;
 }
 
-h1, h2, h4, #show-page div:nth-child(odd), #add-destination-form {
+#welcome, h1, h2, h4, p, #show-page div:nth-child(odd), #add-destination-form {
   margin: auto;
 }
 
-table {
+table, p {
   font-size: 20px;
 }
 
@@ -109,7 +110,7 @@ table, td {
   font-weight: bold;
 }
 
-#add-destination-form, #add-ticket-form {
+#welcome, #add-destination-form, #add-ticket-form {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 1rem;

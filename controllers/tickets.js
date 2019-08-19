@@ -7,15 +7,15 @@ module.exports = {
 };
 
 function create(req, res) {
-  req.body.ticket = req.params.id
+  req.body.flight = req.params.id
   Ticket.create(req.body, (err, ticket) => {
     console.log(ticket);
-    res.redirect(`/tickets/${req.params.id}`);
+    res.redirect(`/flights/${req.params.id}`);
   });
 }
 
 function newTicket(req, res) {
   Flight.findById(req.params.id, function(err, flight) {
-    res.render('tickets/new', {title: 'Add Ticket'});
+    res.render('tickets/new', {title: 'Add Ticket', flight});
   });
 }

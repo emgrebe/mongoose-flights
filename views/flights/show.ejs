@@ -45,7 +45,7 @@
     <h5>No Destinations Yet</h5>
   <% } %>
 
-<% if(ticket.length) { %>
+<% if(tickets.length) { %>
   <table>
     <thead>
       <tr>
@@ -69,7 +69,7 @@
     <% } %>
     
     <p>
-    <a  id="add" href="/flights/:id/tickets/new" value="Add Ticket">Add Ticket</a>
+      <a  id="add" href="/flights/:id/tickets/new" value="Add Ticket">Add Ticket</a>
     </p>
 
 <%- include('../partials/footer') %>
