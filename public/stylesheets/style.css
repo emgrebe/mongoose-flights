@@ -99,6 +99,11 @@ table, td {
   min-width: 100px;
 }
 
+#add-ticket-form {
+  margin: 0 220px 150px;
+  justify-content: center;
+}
+
 #show-page {
   display: grid;
   grid-template-columns: auto auto;
@@ -110,11 +115,14 @@ table, td {
   font-weight: bold;
 }
 
+#welcome, #add-destination-form {
+  margin-bottom: 2rem;
+}
+
 #welcome, #add-destination-form, #add-ticket-form {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 1rem;
-  margin-bottom: 2rem;
 }
 
 #add-destination-form input[type="submit"], #add-ticket-form input[type="submit"] {
