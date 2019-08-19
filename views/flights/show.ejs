@@ -51,15 +51,13 @@
       <tr>
         <th>Seat</th>
         <th>Price ($)</th>
-        <th>Flight</th>
       </tr>
     </thead>
     <tbody>
-      <% flight.tickets.forEach(function(t) { %>
+      <% tickets.forEach(function(t) { %>
       <tr>
         <td><%= t.seat %></td>
         <td><%= t.price %></td>
-        <td><%= t.flight %></td>
       </tr>
       <% }); %>
     </tbody>
@@ -69,7 +67,7 @@
     <% } %>
     
     <p>
-      <a  id="add" href="/flights/:id/tickets/new" value="Add Ticket">Add Ticket</a>
+      <a  id="add" href="/flights/<%= flight._id %>/tickets/new" value="Add Ticket">Add Ticket</a>
     </p>
 
 <%- include('../partials/footer') %>
