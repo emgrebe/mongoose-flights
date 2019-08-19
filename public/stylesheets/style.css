@@ -52,8 +52,9 @@ nav > a:hover, nav > a.active, #detail, #addFlight, #addTicket {
 
 #new-form {
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 30px;
   grid-template-columns: repeat(2, minmax(auto, 22rem));
+  align-content: center;
 }
 
 #new-form, #add-destination-form, #add-ticket-form {
@@ -67,14 +68,17 @@ nav > a:hover, nav > a.active, #detail, #addFlight, #addTicket {
   width: 10rem;
   margin-left: auto;
 }
-
-p {
+h1, p {
   text-align: center;
 }
 
 label {
   grid-column: 1 / 2;
- text-align: center;
+  text-align: end;
+}
+
+h1, h2, h4, #show-page div:nth-child(odd), #add-destination-form {
+  margin: auto;
 }
 
 table {
@@ -93,14 +97,16 @@ table, td {
 #list td:nth-child(2), #list td:nth-child(3) {
   min-width: 100px;
 }
+
 #show-page {
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 1rem;
+  margin-top: 40px;
 }
 
-#add-destination-form {
-  justify-content: center;
+#show-page div:nth-child(odd) {
+  font-weight: bold;
 }
 
 #add-destination-form, #add-ticket-form {
@@ -109,6 +115,7 @@ table, td {
   grid-gap: 1rem;
   margin-bottom: 2rem;
 }
+
 #add-destination-form input[type="submit"], #add-ticket-form input[type="submit"] {
   width: 8rem;
   grid-column: 2 / 3;
@@ -124,7 +131,7 @@ input, select, .button, #add {
   color: white;
 }
 
-.button, #add {
+.button, #add, #detail {
   font-size: 12px;
   border-radius: 10px;
 }

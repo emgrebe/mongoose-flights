@@ -1,10 +1,10 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Airport: <%= flight.airport %></div>
-  <div>Airline: <%= flight.airline %></div>
-  <div>Flight No: <%= flight.flightNo %></div>
-  <div>Departs: <%= flight.departs %></div>
+  <div>Airport:</div><div><%= flight.airport %></div>
+  <div>Airline:</div><div><%= flight.airline %></div>
+  <div>Flight No:</div><div><%= flight.flightNo %></div>
+  <div>Departs:</div><div><%= flight.departs %></div>
 </section>
 
 <br><br><h2>Destination for Flight No. <%= flight.flightNo%></h2>
@@ -45,7 +45,7 @@
     <h5>No Destinations Yet</h5>
   <% } %>
 
-<% if(tickets.length) { %>
+<% if(ticket.length) { %>
   <table>
     <thead>
       <tr>
@@ -69,7 +69,7 @@
     <% } %>
     
     <p>
-    <a  id="add"href="tickets/new" value="Add Ticket">Add Ticket</a>
+    <a  id="add" href="tickets/new" value="Add Ticket">Add Ticket</a>
     </p>
 
 <%- include('../partials/footer') %>

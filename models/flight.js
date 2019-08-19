@@ -37,8 +37,7 @@ var flightSchema = new Schema({
     default: 'SEA'
   },
   destinations: [destinationSchema],
-}, {
-  tiimestamps: true
+  ticket: [{type: Schema.Types.ObjectId, ref: 'Ticket'}]
 });
 
 module.exports = mongoose.model('Flight', flightSchema);

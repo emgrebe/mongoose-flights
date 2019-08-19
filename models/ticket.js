@@ -10,12 +10,12 @@ var ticketSchema = new Schema({
     type: Number,
     min: 0
   },
-  flight:{
+  flight: {
     type: Schema.Types.ObjectId,
     ref: 'Flight'
   }
 }, {
     timestamps: true
-})
+});
 
 module.exports = mongoose.model('Ticket', ticketSchema);

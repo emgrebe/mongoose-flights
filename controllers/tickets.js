@@ -6,16 +6,16 @@ module.exports = {
   create
 };
 
-function newTicket(req, res) {
-  Flight.findById(req.params.id, (err, flight) => {
-    res.render('tickets/new', {title: 'Add Ticket'});
+function create(req, res) {
+  req.body.ticket = req.params.id
+  Ticket.create(req.body, (err, ticket) => {
+    console.log(ticket);
+    res.redirect(`/tickets/${req.params.id}`);
   });
 }
 
-function create(req, res) {
-  req.body.tickett = req.params.id
-  Ticket.create(req.body, (err, ticket) => {
-    console.log(ticket);
-    res.redirect(`/ticketss/${req.params.id}`);
+function newTicket(req, res) {
+  Flight.findById(req.params.id, function(err, flight) {
+    res.render('tickets/new', {title: 'Add Ticket'});
   });
 }

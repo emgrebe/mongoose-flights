@@ -10,23 +10,20 @@ module.exports = {
 
 function show(req, res) {
   Flight.findById(req.params.id, (err, flight) => {
-    Ticket.find({ticket: flight._id}, (err, tickets) => {
-      res.render('flights/show', {title: 'Flight Deatils', flight, tickets});
+    Ticket.find({ticket: flight._id}, (err, ticket) => {
+      res.render('flights/show', {title: 'Flight Details', flight, ticket});
     });
   });
 }
 
 function create(req, res) {
-  for(let key in req.body) {
-    if(req.body[key] === '') delete req.body[key];
-  }
-    var flight = new Flight(req.body);
-    flight.save(function(err){
-      if (err) return res.render('flights/new');
-      for(let key in req.body) {
-        if(req.body[key] === '') delete req.body[key];
-      }
-      res.redirect('/flights');
+  var flight = new Flight(req.body);
+  flight.save(function(err){
+    if (err) return res.render('flights/new');
+    for(let key in req.body) {
+      if(req.body[key] === '') delete req.body[key];
+    }
+    res.redirect('/flights');
   });
 }
 
