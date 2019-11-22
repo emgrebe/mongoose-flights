@@ -4,7 +4,8 @@
 }
 
 body {
-  background: url(https://media4.s-nbcnews.com/j/newscms/2017_31/2095391/170804-boeing-flight-path-airplane-ew-103p_a865277d0a629f51c8ba3fa7932ee6a3.fit-760w.jpg) fixed;
+  background: url(https://media4.s-nbcnews.com/j/newscms/2017_31/2095391/170804-boeing-flight-path-airplane-ew-103p_a865277d0a629f51c8ba3fa7932ee6a3.fit-760w.jpg) no-repeat center center fixed;
+  background-size: cover;
   margin: 0;
   height: 100vh;
   display: grid;
